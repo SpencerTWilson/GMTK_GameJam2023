@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq27fxxn7kr3s"]
+
+[ext_resource type="Script" path="res://UI Screens/lvl_change.gd" id="1_l2dhl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsopd"]
+bg_color = Color(0.72549, 0.490196, 0.831373, 1)
+
+[node name="Main Menu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bsopd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_top = 49.0
+offset_right = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "He's Gonna Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Lvl 1" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LVL 1"
+script = ExtResource("1_l2dhl")
+lvl_scene = "res://Levels/Level 1.tscn"
+
+[node name="Lvl 2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LVL 2"
+
+[node name="Lvl 3" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LVL 3"
+
+[node name="Lvl 4" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LVL 4"
+
+[node name="Lvl 5" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LVL 5"

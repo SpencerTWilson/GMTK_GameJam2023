@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://tl4pxbj8khou"]
+
+[ext_resource type="Texture2D" uid="uid://dsipy1umik5bs" path="res://Art/Win_Block.png" id="1_nmq00"]
+[ext_resource type="Script" path="res://Cross Level/Win.gd" id="2_cc2vv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w0xb"]
+size = Vector2(100, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nsje"]
+size = Vector2(96, 4)
+
+[node name="Win_Block" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_nmq00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5w0xb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_cc2vv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_5nsje")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

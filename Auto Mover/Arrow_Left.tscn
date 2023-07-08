@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ved4y0lxd6tj"]
+
+[ext_resource type="Texture2D" uid="uid://dij5de8yvxg3k" path="res://Art/Left_Arrow.png" id="1_r2jl4"]
+[ext_resource type="Script" path="res://Auto Mover/Arrow.gd" id="2_wh72k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1t78"]
+size = Vector2(10, 4.8)
+
+[node name="Arrow_Left" type="Sprite2D"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_r2jl4")
+script = ExtResource("2_wh72k")
+speed = 100.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h1t78")

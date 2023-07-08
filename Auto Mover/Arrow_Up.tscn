@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b07atipr5tmvo"]
+
+[ext_resource type="Texture2D" uid="uid://c5j5c6dimtrwc" path="res://Art/Up_Arrow.png" id="1_l5fsq"]
+[ext_resource type="Script" path="res://Auto Mover/Arrow.gd" id="2_finfh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf1a7"]
+size = Vector2(10, 0.5)
+
+[node name="Arrow_Up" type="Sprite2D"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_l5fsq")
+script = ExtResource("2_finfh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cf1a7")

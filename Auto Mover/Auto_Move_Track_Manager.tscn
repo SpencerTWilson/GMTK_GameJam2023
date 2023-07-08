@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnxcbefh8ifsr"]
+
+[ext_resource type="Script" path="res://Auto Mover/Arrow_Finish.gd" id="1_0uap3"]
+[ext_resource type="Script" path="res://Auto Mover/Auto_Move_Track_Manager.gd" id="1_cp7qi"]
+[ext_resource type="PackedScene" uid="uid://ved4y0lxd6tj" path="res://Auto Mover/Arrow_Left.tscn" id="1_wi1qf"]
+[ext_resource type="PackedScene" uid="uid://b07atipr5tmvo" path="res://Auto Mover/Arrow_Up.tscn" id="2_hkxli"]
+[ext_resource type="PackedScene" uid="uid://bsp4icyixcg53" path="res://Auto Mover/Arrow_Right.tscn" id="3_5rysd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w435g"]
+bg_color = Color(0.6, 0.6, 0.6, 0.745098)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf10v"]
+size = Vector2(30, 2)
+
+[node name="Auto_Move_Track_Manager" type="Control"]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -237.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_cp7qi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Arrow_Channel_Left" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_w435g")
+
+[node name="Finish" type="Panel" parent="HBoxContainer/Arrow_Channel_Left"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Area2D" type="Area2D" parent="HBoxContainer/Arrow_Channel_Left/Finish"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_0uap3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/Arrow_Channel_Left/Finish/Area2D"]
+position = Vector2(15, 15)
+shape = SubResource("RectangleShape2D_vf10v")
+
+[node name="Arrow_Left" parent="HBoxContainer/Arrow_Channel_Left" instance=ExtResource("1_wi1qf")]
+position = Vector2(15, 0)
+
+[node name="Arrow_Channel_Up" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w435g")
+
+[node name="Finish" type="Panel" parent="HBoxContainer/Arrow_Channel_Up"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Area2D" type="Area2D" parent="HBoxContainer/Arrow_Channel_Up/Finish"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/Arrow_Channel_Up/Finish/Area2D"]
+position = Vector2(15, 15)
+shape = SubResource("RectangleShape2D_vf10v")
+
+[node name="Arrow_Up" parent="HBoxContainer/Arrow_Channel_Up" instance=ExtResource("2_hkxli")]
+position = Vector2(15, 0)
+
+[node name="Arrow_Channel_Right" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w435g")
+
+[node name="Finish" type="Panel" parent="HBoxContainer/Arrow_Channel_Right"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Area2D" type="Area2D" parent="HBoxContainer/Arrow_Channel_Right/Finish"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/Arrow_Channel_Right/Finish/Area2D"]
+position = Vector2(15, 15)
+shape = SubResource("RectangleShape2D_vf10v")
+
+[node name="Arrow_Right" parent="HBoxContainer/Arrow_Channel_Right" instance=ExtResource("3_5rysd")]
+position = Vector2(15, 0)
+
+[connection signal="area_entered" from="HBoxContainer/Arrow_Channel_Left/Finish/Area2D" to="HBoxContainer/Arrow_Channel_Left/Finish/Area2D" method="_on_area_entered"]
+[connection signal="area_shape_entered" from="HBoxContainer/Arrow_Channel_Left/Finish/Area2D" to="HBoxContainer/Arrow_Channel_Left/Finish/Area2D" method="_on_area_shape_entered"]
+[connection signal="body_entered" from="HBoxContainer/Arrow_Channel_Left/Finish/Area2D" to="HBoxContainer/Arrow_Channel_Left/Finish/Area2D" method="_on_body_entered"]

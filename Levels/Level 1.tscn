@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1x8ufiopv86f"]
+
+[ext_resource type="PackedScene" uid="uid://dmc4tosjk3im2" path="res://Cross Level/block.tscn" id="1_or8b4"]
+[ext_resource type="PackedScene" uid="uid://b4eo1m8eqybe7" path="res://Cross Level/Player.tscn" id="2_5yrh2"]
+[ext_resource type="PackedScene" uid="uid://tl4pxbj8khou" path="res://Cross Level/win_block.tscn" id="2_v42ax"]
+[ext_resource type="PackedScene" uid="uid://b2e38qljk4t0j" path="res://Cross Level/Block_Manager.tscn" id="3_ysug7"]
+[ext_resource type="PackedScene" uid="uid://b26nlg5cijxeg" path="res://Cross Level/Death_Box.tscn" id="4_mv5b0"]
+[ext_resource type="PackedScene" uid="uid://bxdpadx5t3li2" path="res://Cross Level/Draggable_Block.tscn" id="5_ykyvq"]
+[ext_resource type="PackedScene" uid="uid://cnxcbefh8ifsr" path="res://Auto Mover/Auto_Move_Track_Manager.tscn" id="7_ij3dg"]
+
+[node name="Level_1" type="Node"]
+
+[node name="Block" parent="." instance=ExtResource("1_or8b4")]
+position = Vector2(105, 592)
+
+[node name="Win_Block" parent="." instance=ExtResource("2_v42ax")]
+position = Vector2(835, 610)
+
+[node name="Player" parent="." instance=ExtResource("2_5yrh2")]
+position = Vector2(96, 95)
+gravity = 9.8
+player_acceleration = 1.0
+player_top_speed = 4.0
+
+[node name="Block_Manager" parent="." instance=ExtResource("3_ysug7")]
+
+[node name="Draggable_Block" parent="Block_Manager" instance=ExtResource("5_ykyvq")]
+position = Vector2(936, 586)
+
+[node name="Draggable_Block2" parent="Block_Manager" instance=ExtResource("5_ykyvq")]
+position = Vector2(938, 524)
+
+[node name="Draggable_Block3" parent="Block_Manager" instance=ExtResource("5_ykyvq")]
+position = Vector2(939, 463)
+
+[node name="Death_Box" parent="." instance=ExtResource("4_mv5b0")]
+visible = false
+position = Vector2(577, 121)
+scale = Vector2(150, 100)
+
+[node name="Auto_Move_Track_Manager" parent="." instance=ExtResource("7_ij3dg")]
+layout_direction = 1
+offset_left = -236.0

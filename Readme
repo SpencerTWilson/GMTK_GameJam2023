@@ -1,1 +1,18 @@
 Hello
+
+
+when running level
+	grab total length from last timestamp
+	for length of whole level                                                                     \|/
+		if action start arrow is exist and action end arrow is not exist spawn filler sprite        |||
+		at index in dictionary of timestamp(which may or may not exist) spawn arrow above screen    \|/
+		update action going variables to know to spawn fillers
+		wait 1 "tick"
+
+at runtime
+	move arrows down every frame
+	in collision layer with judgement line
+
+on collision with judgement bar
+	update runtime variables to make player do thing
+	explode arrow and delet from exist

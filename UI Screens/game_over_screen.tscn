@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://xvj7oqgcppag"]
+[gd_scene load_steps=6 format=3 uid="uid://xvj7oqgcppag"]
 
+[ext_resource type="FontFile" uid="uid://cjvv0q78sve1l" path="res://Hey Comic.ttf" id="1_tn58u"]
 [ext_resource type="Script" path="res://UI Screens/Main Menu Button.gd" id="2_2jeu8"]
 [ext_resource type="AudioStream" uid="uid://dwecmp6v6f3rc" path="res://Audio/Select.wav" id="2_5l37r"]
 [ext_resource type="AudioStream" uid="uid://dmdrddbton3en" path="res://Audio/sigh.wav" id="3_5orox"]
@@ -32,12 +33,14 @@ theme_override_constants/separation = 50
 
 [node name="Game Over" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tn58u")
 theme_override_font_sizes/font_size = 100
 text = "Game Over"
 
 [node name="Main Menu Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_tn58u")
 text = "Main Menu"
 script = ExtResource("2_2jeu8")
 

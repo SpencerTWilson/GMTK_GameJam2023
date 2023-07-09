@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://tl4pxbj8khou"]
+[gd_scene load_steps=6 format=3 uid="uid://tl4pxbj8khou"]
 
 [ext_resource type="Texture2D" uid="uid://dsipy1umik5bs" path="res://Art/Win_Block.png" id="1_nmq00"]
 [ext_resource type="Script" path="res://Cross Level/Win.gd" id="2_cc2vv"]
+[ext_resource type="FontFile" uid="uid://cjvv0q78sve1l" path="res://Hey Comic.ttf" id="3_5b30c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w0xb"]
 size = Vector2(100, 50)
@@ -33,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_5b30c")
 text = "WIN"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

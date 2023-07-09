@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Guidance"
+config/description="A little game for a game jam"
 run/main_scene="res://UI Screens/Main Menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Art/Up_Arrow_icon.png"
 
 [autoload]
 

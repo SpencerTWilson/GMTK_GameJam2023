@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp7bchll58551"]
+[gd_scene load_steps=6 format=3 uid="uid://bp7bchll58551"]
 
 [ext_resource type="Script" path="res://UI Screens/Main Menu Button.gd" id="1_433k1"]
+[ext_resource type="FontFile" uid="uid://cjvv0q78sve1l" path="res://Hey Comic.ttf" id="1_g47ij"]
 [ext_resource type="AudioStream" uid="uid://dwecmp6v6f3rc" path="res://Audio/Select.wav" id="2_4sh3h"]
 [ext_resource type="AudioStream" uid="uid://coxo3dkhl1f8e" path="res://Audio/242501__gabrielaraujo__powerupsuccess.wav" id="3_xqvie"]
 
@@ -32,12 +33,14 @@ theme_override_constants/separation = 50
 
 [node name="Game Over" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g47ij")
 theme_override_font_sizes/font_size = 100
 text = "You Win!"
 
 [node name="Main Menu Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g47ij")
 text = "Main Menu"
 script = ExtResource("1_433k1")
 

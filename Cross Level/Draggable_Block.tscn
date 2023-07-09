@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxdpadx5t3li2"]
+[gd_scene load_steps=5 format=3 uid="uid://bxdpadx5t3li2"]
 
 [ext_resource type="Texture2D" uid="uid://b6tldwhvudwk7" path="res://Art/Placable.png" id="1_1plfi"]
 [ext_resource type="Script" path="res://Cross Level/Draggable_Block.gd" id="2_vlday"]
+[ext_resource type="FontFile" uid="uid://cjvv0q78sve1l" path="res://Hey Comic.ttf" id="3_8n810"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a0yk"]
 size = Vector2(40, 20)
@@ -28,4 +29,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8n810")
 text = "Drag"

@@ -8,8 +8,6 @@ func _input(event):
 		get_tree().paused = !get_tree().paused
 		self.visible = !self.visible
 		$AudioStreamPlayer2D.play()
-	
-	
 
 
 func _on_check_button_toggled(button_pressed):

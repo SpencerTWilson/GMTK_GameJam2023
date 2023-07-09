@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://clv1nqnlh76mu" path="res://Audio/Hit.wav" id="2_d2fck"]
 
 [node name="Block_Manager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_3ge85")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

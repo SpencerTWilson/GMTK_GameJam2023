@@ -28,6 +28,9 @@ scale = Vector2(31.075, 2.5)
 [node name="Player" parent="." instance=ExtResource("2_5yrh2")]
 position = Vector2(107, 516)
 
+[node name="Win_Block" parent="." instance=ExtResource("2_v42ax")]
+position = Vector2(791, 391)
+
 [node name="Block_Manager" parent="." instance=ExtResource("3_ysug7")]
 
 [node name="Draggable_Block" parent="Block_Manager" instance=ExtResource("5_ykyvq")]
@@ -38,9 +41,6 @@ position = Vector2(741, 165)
 
 [node name="Draggable_Block3" parent="Block_Manager" instance=ExtResource("5_ykyvq")]
 position = Vector2(740, 98)
-
-[node name="Win_Block" parent="." instance=ExtResource("2_v42ax")]
-position = Vector2(791, 391)
 
 [node name="Auto_Move_Track_Manager" parent="." instance=ExtResource("7_ij3dg")]
 layout_direction = 1

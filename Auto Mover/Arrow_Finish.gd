@@ -9,6 +9,7 @@ func _ready():
 	self.area_entered.connect(Callable(self, "_on_area_entered"))
 
 func _on_area_entered(area):
+	$AudioStreamPlayer2D.play()
 	duration = area.get_parent().duration
 	if direction == 0:
 		$"../../../..".move_left.emit(duration)

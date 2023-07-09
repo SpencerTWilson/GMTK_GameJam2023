@@ -12,6 +12,7 @@ var dragging_diff: Vector2 = Vector2(0,0)
 func _process(_delta):
 	if is_being_dragged:
 		tween = get_tree().create_tween()
+		tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 		tween.tween_property(self, "position", get_global_mouse_position() - dragging_diff, 0.1)
 
 func activate():

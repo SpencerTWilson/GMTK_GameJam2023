@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var tween: Tween
+var tween: Tween
 
 @export var total_drops: int = 1
 var num_drops: int = 0

@@ -4,13 +4,12 @@
 [ext_resource type="Script" path="res://Auto Mover/Arrow.gd" id="2_wh72k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1t78"]
-size = Vector2(10, 4.8)
+size = Vector2(10, 0.5)
 
 [node name="Arrow_Left" type="Sprite2D"]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_r2jl4")
 script = ExtResource("2_wh72k")
-speed = 100.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

@@ -41,6 +41,7 @@ func _start_move_left(duration):
 	
 	print("stop moving left")
 	pressing_left = false
+	timer.queue_free()
 
 func _start_move_up(duration):
 	pressing_jump = true
@@ -55,6 +56,7 @@ func _start_move_up(duration):
 	
 	print("stop moving up")
 	pressing_jump = false
+	timer.queue_free()
 	
 func _start_move_right(duration):
 	pressing_right = true
@@ -69,6 +71,7 @@ func _start_move_right(duration):
 	
 	print("stop moving right")
 	pressing_right = false
+	timer.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp7bchll58551"]
+[gd_scene load_steps=5 format=3 uid="uid://bp7bchll58551"]
 
 [ext_resource type="Script" path="res://UI Screens/Main Menu Button.gd" id="1_433k1"]
+[ext_resource type="AudioStream" uid="uid://dwecmp6v6f3rc" path="res://Audio/Select.wav" id="2_4sh3h"]
+[ext_resource type="AudioStream" uid="uid://coxo3dkhl1f8e" path="res://Audio/242501__gabrielaraujo__powerupsuccess.wav" id="3_xqvie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr8wj"]
 bg_color = Color(0.411765, 0.705882, 0.380392, 1)
@@ -38,3 +40,10 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Main Menu"
 script = ExtResource("1_433k1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/Main Menu Button"]
+stream = ExtResource("2_4sh3h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xqvie")
+autoplay = true

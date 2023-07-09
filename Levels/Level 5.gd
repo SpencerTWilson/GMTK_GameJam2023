@@ -4,7 +4,7 @@ extends Node
 	0.0 : [false,false,true],
 	1.5 : [true,false,false],
 	5.0 : [false,false,true],
-	8.0 : [true,false,false],
-	10.0 : [false,false,true],
-	25.0 : "death"
+	6.0 : [true,false,false],
+	9.0 : [false,false,true],
+	30.0 : "death"
 }

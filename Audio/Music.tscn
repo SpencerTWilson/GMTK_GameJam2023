@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://commu5asqrpma"]
+
+[ext_resource type="AudioStream" uid="uid://ceqy28hhf748y" path="res://Audio/262259__shadydave__snowfall-final.mp3" id="1_x0fg8"]
+[ext_resource type="Script" path="res://Audio/Music.gd" id="2_n6ssq"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_x0fg8")
+autoplay = true
+script = ExtResource("2_n6ssq")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

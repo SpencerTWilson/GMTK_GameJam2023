@@ -14,6 +14,8 @@ extends CharacterBody2D
 
 @export var input_timer: Timer
 
+var just_collided: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#make all numbers for velocity better
@@ -96,4 +98,9 @@ func vertical_move(delta):
 	else:
 		velocity.y = 0
 		
-	move_and_slide()
+	if move_and_slide():
+		if !just_collided:
+			just_collided = true
+			$AudioStreamPlayer2D.play()
+	else:
+		just_collided = false

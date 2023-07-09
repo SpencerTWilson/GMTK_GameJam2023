@@ -7,7 +7,7 @@
 size = Vector2(100, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5nsje"]
-size = Vector2(96, 4)
+size = Vector2(90, 1)
 
 [node name="Win_Block" type="StaticBody2D"]
 
@@ -24,7 +24,7 @@ collision_mask = 2
 script = ExtResource("2_cc2vv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -28)
+position = Vector2(0, -26.5)
 shape = SubResource("RectangleShape2D_5nsje")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

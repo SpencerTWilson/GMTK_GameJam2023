@@ -15,6 +15,10 @@ run/main_scene="res://UI Screens/Main Menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+HaveWon="*res://have_won.gd"
+
 [dotnet]
 
 project/assembly_name="Gmtk Game Jam 2023"

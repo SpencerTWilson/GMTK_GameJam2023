@@ -13,12 +13,18 @@ var time_stamp: float = 0
 
 func _ready():
 	movement_track = $"..".times_dictionary
+	$Timer.timeout.connect(Callable(self, "_time_and_spawn"))
 	_time_and_spawn()
 	
 func _time_and_spawn():
+	if typeof(movement_track[time_stamp]) != TYPE_ARRAY:
+		if !HaveWon.has_won:
+			get_tree().change_scene_to_file("res://UI Screens/game_over_screen.tscn")
+	
 	var next_time_stamp = get_duration()
 	var duration = next_time_stamp - time_stamp
 	$Timer.wait_time = duration
+	$Timer.start()
 	
 	if movement_track[time_stamp][0]:
 		left_spawner._spawn_arrow_with_duration(duration)
@@ -26,12 +32,13 @@ func _time_and_spawn():
 		up_spawner._spawn_arrow_with_duration(duration)
 	if movement_track[time_stamp][2]:
 		right_spawner._spawn_arrow_with_duration(duration)
+	time_stamp = next_time_stamp
 		
 func get_duration():
-	var next_time = 10000000
+	var next_time = 100000
+	
 	for item in movement_track.keys():
 		if item > time_stamp:
 			if item < next_time:
 				next_time = item
-	
 	return next_time

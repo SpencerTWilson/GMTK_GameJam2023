@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk1pkarnnp2m5"]
+
+[ext_resource type="Script" path="res://Levels/Level 4.gd" id="1_ji8fn"]
+[ext_resource type="PackedScene" uid="uid://b26nlg5cijxeg" path="res://Cross Level/Death_Box.tscn" id="2_5y0u1"]
+[ext_resource type="PackedScene" uid="uid://dmc4tosjk3im2" path="res://Cross Level/block.tscn" id="3_hot8e"]
+[ext_resource type="PackedScene" uid="uid://chga64e3f387v" path="res://Cross Level/Block_perm.tscn" id="3_q8if6"]
+[ext_resource type="PackedScene" uid="uid://b2e38qljk4t0j" path="res://Cross Level/Block_Manager.tscn" id="3_v1mue"]
+[ext_resource type="PackedScene" uid="uid://bxdpadx5t3li2" path="res://Cross Level/Draggable_Block.tscn" id="4_eaxgn"]
+[ext_resource type="PackedScene" uid="uid://cnxcbefh8ifsr" path="res://Auto Mover/Auto_Move_Track_Manager.tscn" id="4_hvqsh"]
+[ext_resource type="PackedScene" uid="uid://tl4pxbj8khou" path="res://Cross Level/win_block.tscn" id="5_7x3m2"]
+[ext_resource type="PackedScene" uid="uid://b4eo1m8eqybe7" path="res://Cross Level/Player.tscn" id="8_s5vq5"]
+
+[node name="Level 4" type="Node"]
+script = ExtResource("1_ji8fn")
+
+[node name="Death_Box" parent="." instance=ExtResource("2_5y0u1")]
+visible = false
+position = Vector2(579, 188)
+scale = Vector2(75, 50)
+
+[node name="Block" parent="." instance=ExtResource("3_hot8e")]
+position = Vector2(516, 136)
+
+[node name="Block_perm" parent="." instance=ExtResource("3_q8if6")]
+position = Vector2(508, 152)
+scale = Vector2(7.10001, 2.5)
+
+[node name="Block_perm2" parent="." instance=ExtResource("3_q8if6")]
+position = Vector2(510.75, 287)
+scale = Vector2(15.5125, 2.5)
+
+[node name="Block_perm4" parent="." instance=ExtResource("3_q8if6")]
+position = Vector2(196, 444)
+scale = Vector2(6.025, 2.5)
+
+[node name="Block_perm3" parent="." instance=ExtResource("3_q8if6")]
+position = Vector2(809, 440)
+scale = Vector2(6.025, 2.5)
+
+[node name="Player" parent="." instance=ExtResource("8_s5vq5")]
+position = Vector2(516, 56)
+
+[node name="Block_Manager" parent="." instance=ExtResource("3_v1mue")]
+
+[node name="Draggable_Block" parent="Block_Manager" instance=ExtResource("4_eaxgn")]
+position = Vector2(179, 556)
+
+[node name="Draggable_Block2" parent="Block_Manager" instance=ExtResource("4_eaxgn")]
+position = Vector2(117, 495)
+
+[node name="Draggable_Block3" parent="Block_Manager" instance=ExtResource("4_eaxgn")]
+position = Vector2(64, 556)
+
+[node name="Win_Block" parent="." instance=ExtResource("5_7x3m2")]
+position = Vector2(509, 601)
+
+[node name="Auto_Move_Track_Manager" parent="." instance=ExtResource("4_hvqsh")]

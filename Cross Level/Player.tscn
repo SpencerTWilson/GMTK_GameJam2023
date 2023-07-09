@@ -9,9 +9,8 @@ radius = 18.0
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("input_timer")]
 collision_layer = 3
 script = ExtResource("1_8bfta")
-pressing_right = false
-gravity = 5.0
-player_acceleration = 6.0
+gravity = 9.8
+player_acceleration = 1.0
 player_jump_speed = 5.0
 player_top_speed = 10.0
 input_timer = NodePath("")

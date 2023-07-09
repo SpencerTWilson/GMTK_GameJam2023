@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var pressing_right: bool = true
+@export var pressing_right: bool = false
 @export var pressing_left: bool = false
 @export var pressing_jump: bool = false
 
@@ -33,7 +33,7 @@ func _start_move_left(duration):
 	
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = duration
+	timer.wait_time = duration - 0.01
 	timer.start()
 	print("moving left")
 	
@@ -48,7 +48,7 @@ func _start_move_up(duration):
 	
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = duration
+	timer.wait_time = duration - 0.01
 	timer.start()
 	print("moving up")
 	
@@ -63,7 +63,7 @@ func _start_move_right(duration):
 	
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = duration
+	timer.wait_time = duration - 0.01
 	timer.start()
 	print("moving right")
 	

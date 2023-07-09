@@ -48,18 +48,37 @@ lvl_scene = "res://Levels/Level 1.tscn"
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "LVL 2"
+script = ExtResource("1_l2dhl")
+lvl_scene = "res://Levels/Level 2.tscn"
 
 [node name="Lvl 3" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "LVL 3"
+script = ExtResource("1_l2dhl")
+lvl_scene = "res://Levels/Level 3.tscn"
 
 [node name="Lvl 4" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "LVL 4"
+script = ExtResource("1_l2dhl")
+lvl_scene = "res://Levels/Level 4.tscn"
 
 [node name="Lvl 5" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "LVL 5"
+script = ExtResource("1_l2dhl")
+
+[node name="Notes" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Note: Not ordered by difficulty
+
+Help: The arrows show the characters next move all you gotta do is drag the metal blocks to get them there safely. 
+The level fails if they stop giving inputs for long enough.
+Credits:
+(Trent) Spencer Wilson - Everything
+(Trent) Josh Tonk - Distraction
+(Trent) Max Wilson - Brother"
+horizontal_alignment = 1

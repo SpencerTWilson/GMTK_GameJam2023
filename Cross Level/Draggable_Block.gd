@@ -2,7 +2,7 @@ extends Sprite2D
 
 var tween: Tween
 
-@export var total_drops: int = 1
+@export var total_drops: int = 100000
 var num_drops: int = 0
 
 var can_be_dragged: bool = true
@@ -15,8 +15,9 @@ func _process(_delta):
 		tween.tween_property(self, "position", get_global_mouse_position() - dragging_diff, 0.1)
 
 func activate():
-	tween = get_tree().create_tween()
-	tween.tween_property(self, "scale", Vector2(2, 2), 0.1).set_ease(Tween.EASE_OUT)
+	pass
+	#tween = get_tree().create_tween()
+	#tween.tween_property(self, "scale", Vector2(2, 2), 0.1).set_ease(Tween.EASE_OUT)
 
 func dropped():
 	$StaticBody2D/CollisionShape2D.disabled = false

@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1x8ufiopv86f"]
+[gd_scene load_steps=9 format=3 uid="uid://c1x8ufiopv86f"]
 
+[ext_resource type="Script" path="res://Levels/Level_1_track.gd" id="1_fwlko"]
 [ext_resource type="PackedScene" uid="uid://dmc4tosjk3im2" path="res://Cross Level/block.tscn" id="1_or8b4"]
 [ext_resource type="PackedScene" uid="uid://b4eo1m8eqybe7" path="res://Cross Level/Player.tscn" id="2_5yrh2"]
 [ext_resource type="PackedScene" uid="uid://tl4pxbj8khou" path="res://Cross Level/win_block.tscn" id="2_v42ax"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cnxcbefh8ifsr" path="res://Auto Mover/Auto_Move_Track_Manager.tscn" id="7_ij3dg"]
 
 [node name="Level_1" type="Node"]
+script = ExtResource("1_fwlko")
 
 [node name="Block" parent="." instance=ExtResource("1_or8b4")]
 position = Vector2(105, 592)

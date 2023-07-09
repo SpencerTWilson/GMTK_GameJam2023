@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnxcbefh8ifsr"]
+[gd_scene load_steps=9 format=3 uid="uid://cnxcbefh8ifsr"]
 
 [ext_resource type="Script" path="res://Auto Mover/Arrow_Finish.gd" id="1_0uap3"]
 [ext_resource type="Script" path="res://Auto Mover/Auto_Move_Track_Manager.gd" id="1_cp7qi"]
+[ext_resource type="PackedScene" uid="uid://ved4y0lxd6tj" path="res://Auto Mover/Arrow_Left.tscn" id="1_wi1qf"]
 [ext_resource type="PackedScene" uid="uid://b07atipr5tmvo" path="res://Auto Mover/Arrow_Up.tscn" id="2_hkxli"]
 [ext_resource type="PackedScene" uid="uid://bsp4icyixcg53" path="res://Auto Mover/Arrow_Right.tscn" id="3_5rysd"]
 [ext_resource type="Script" path="res://Auto Mover/arrow_spawner.gd" id="4_f2wgb"]
@@ -59,6 +60,11 @@ script = ExtResource("1_0uap3")
 position = Vector2(15, 15)
 shape = SubResource("RectangleShape2D_vf10v")
 
+[node name="Arrow_Spawner" type="Node2D" parent="HBoxContainer/Arrow_Channel_Left"]
+position = Vector2(15, 0)
+script = ExtResource("4_f2wgb")
+arrow_to_spawn = ExtResource("1_wi1qf")
+
 [node name="Arrow_Channel_Up" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
@@ -84,8 +90,10 @@ direction = 1
 position = Vector2(15, 15)
 shape = SubResource("RectangleShape2D_vf10v")
 
-[node name="Arrow_Up" parent="HBoxContainer/Arrow_Channel_Up" instance=ExtResource("2_hkxli")]
+[node name="Arrow_Spawner" type="Node2D" parent="HBoxContainer/Arrow_Channel_Up"]
 position = Vector2(15, 0)
+script = ExtResource("4_f2wgb")
+arrow_to_spawn = ExtResource("2_hkxli")
 
 [node name="Arrow_Channel_Right" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
@@ -115,6 +123,6 @@ shape = SubResource("RectangleShape2D_vf10v")
 [node name="Arrow_Spawner" type="Node2D" parent="HBoxContainer/Arrow_Channel_Right"]
 position = Vector2(15, 0)
 script = ExtResource("4_f2wgb")
+arrow_to_spawn = ExtResource("3_5rysd")
 
-[node name="Arrow_Right" parent="HBoxContainer/Arrow_Channel_Right" instance=ExtResource("3_5rysd")]
-position = Vector2(15, 0)
+[node name="Timer" type="Timer" parent="."]
